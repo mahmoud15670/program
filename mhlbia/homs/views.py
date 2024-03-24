@@ -1,4 +1,5 @@
 from django.views import generic
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from .models import *
@@ -95,4 +96,4 @@ class ResultDetilView(generic.DetailView):
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        return self.render_to_response(context)
+        return HttpResponse('hi')
