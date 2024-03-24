@@ -19,7 +19,7 @@
         <th>Referred By:</th>
         <td>{{result.patient.dr}}</td>
         <th>Print Date:</th>
-        <td>{{result.patient.dr}}</td>
+        <td id='print_date'>{{result.patient.dr}}</td>
     </tr>
     <tr>
     </tr>
@@ -45,8 +45,10 @@
 <a href="javascript:">Print</a>
 <footer><img src="{% static 'tail.jpg' %}" alt="tail img"></footer>
 <script>
-    function report(params) {
-        
+    function report() {
+        const print_date = document.querySelector('#print_date');
+        print_date.innerHTML = Date
+        window.print()
     }
 </script>
 <style>
