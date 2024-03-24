@@ -61,7 +61,7 @@ class ResultCreateView(generic.UpdateView):
     model = Result
     fields = ['result', 'ref']
     def form_valid(self, form):
-        form.initial.
+        form.get_initial_for_field('ref')
         self.object.wrote = True
         self.object.save()
         return super().form_valid(form)
