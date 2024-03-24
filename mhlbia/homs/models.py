@@ -5,7 +5,7 @@ import random
 
 
 class Patient(models.Model):
-    patient_id = models.CharField(max_length=12, unique=True)
+    patient_id = models.CharField(max_length=12, unique=True, editable=False)
     name = models.CharField(max_length=60, name='name')
     age = models.PositiveSmallIntegerField(name='age',)
     date = models.CharField(max_length=5, choices=[('year', 'year'), ('month', 'month'), ('day', 'day')])
