@@ -93,7 +93,3 @@ class ResultCreateView(generic.UpdateView):
 
 class ResultDetilView(generic.DetailView):
     model = Result
-    def post(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        context = self.get_context_data(object=self.object)
-        return HttpResponse(context.values())
