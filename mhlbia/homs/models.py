@@ -29,7 +29,6 @@ class Test(models.Model):
     ref_female = models.TextField(max_length=5000, blank=True)
 
     def __str__(self):
-        
         return self.name
 
 class Result(models.Model):
