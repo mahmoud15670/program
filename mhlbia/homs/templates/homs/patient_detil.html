@@ -27,9 +27,12 @@
             <td>{{patient.dr}}</td>
             <td>
                 {% for test in patient.test.all %}
-                {{test.test.name}} 
+                {{test.test.name}}
+                
                 {% endfor %}
+                
             </td>
+            
             <td>{{patient.total_prise}}</td>
             <td>{{patient.entry}}</td>
         </tr>
