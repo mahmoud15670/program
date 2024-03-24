@@ -1,9 +1,11 @@
 from django.db import models
 from django.utils import timezone
+import random
 
 
 
 class Patient(models.Model):
+    patient_id = models.CharField(max_length=12, unique=True, default=random.randbytes(12))
     name = models.CharField(max_length=60, name='name')
     age = models.PositiveSmallIntegerField(name='age',)
     date = models.CharField(max_length=5, choices=[('year', 'year'), ('month', 'month'), ('day', 'day')])
@@ -12,6 +14,7 @@ class Patient(models.Model):
     dr = models.CharField(max_length=30, default='-')
     test = models.ManyToManyField('Test', through='Result')
     entry = models.DateTimeField(default=timezone.now, editable=False)
+        
 
     def total_prise(self):
         return sum([query.prise for query in self.test.all()])
