@@ -87,4 +87,3 @@ class ResultCreateView(generic.UpdateView):
 
 class ResultDetilView(generic.DetailView):
     model = Result
-    context_object_name = 'result'
