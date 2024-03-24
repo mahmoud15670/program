@@ -1,0 +1,10 @@
+{% extends 'homs/layout.html' %}
+
+{% block body %}
+<a href="{% url 'create_test' %}">create test</a>
+<ul>
+{% for test in tests %}
+    <li><a href="{% url 'test_dedil' test.id %}">{{test}}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
