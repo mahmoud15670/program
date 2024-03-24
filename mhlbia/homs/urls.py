@@ -15,5 +15,6 @@ urlpatterns = [
     path('test/<int:pk>', views.TestDetilView.as_view(), name='test_dedil'),
     path('test/edit/<int:pk>', views.TestEditView.as_view(), name='test_edit'),
     path('test/delete/<int:pk>', views.TestDeleteView.as_view(), name='test_delete'),
-    path('result/<int:pk>', views.ResultCreateView.as_view(), name='result')
+    path('result/<int:pk>', views.ResultCreateView.as_view(), name='result'),
+    path('result/<int:pk>/print', views.ResultCreateView.as_view(), name='result_print'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
