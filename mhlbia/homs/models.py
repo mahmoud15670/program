@@ -4,7 +4,6 @@ from django.utils import timezone
 
 
 class Patient(models.Model):
-    patient_id = models.BigAutoField(editable=False, unique=True, primary_key=True)
     name = models.CharField(max_length=60, name='name')
     age = models.PositiveSmallIntegerField(name='age',)
     date = models.CharField(max_length=5, choices=[('year', 'year'), ('month', 'month'), ('day', 'day')])

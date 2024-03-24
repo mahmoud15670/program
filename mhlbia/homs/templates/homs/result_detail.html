@@ -6,18 +6,22 @@
     <tr>
         <th>Name:</th>
         <td>{{result.patient.name}}</td>
+        <th>Patient Id:</th>
+        <td>{{result.patient.patient_id}}</td>
     </tr>
     <tr>
         <th>Age / Sex:</th>
         <td>{{result.patient.age}} {{result.patient.date}} / {{result.patient.gender}}</td>
+        <th>Request Date:</th>
+        <td>{{result.patient.entry}}</td>
     </tr>
     <tr>
         <th>Referred By:</th>
         <td>{{result.patient.dr}}</td>
+        <th>Print Date:</th>
+        <td>{{result.patient.dr}}</td>
     </tr>
     <tr>
-        <th>Request Date:</th>
-        <td>{{result.patient.entry}}</td>
     </tr>
 </table>
 <hr>
