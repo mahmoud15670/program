@@ -1,7 +1,7 @@
 {% extends 'homs/layout.html' %}
 
 {% block body %}
-<table style="width:100%">
+<table >
     <tr>
         <th>Name:</th>
         <td>{{result.patient.name}}</td>
@@ -14,5 +14,10 @@
         <th>Referred By:</th>
         <td>{{result.patient.dr}}</td>
     </tr>
+    <tr>
+        <th>Request Date:</th>
+        <td>{{result.patient.entry}}</td>
+    </tr>
 </table>
+<hr>
 {% endblock %}
