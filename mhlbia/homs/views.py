@@ -26,9 +26,10 @@ class PatientCreateView(generic.CreateView):
         for result in object.result_set.all():
             if object.gender == 'male':
                 result.ref = result.test.ref_male
+                object.save()
             else:
                 result.ref = result.test.ref_female
-        object.save()
+                object.save()
         return super().form_valid(form)
     
 
