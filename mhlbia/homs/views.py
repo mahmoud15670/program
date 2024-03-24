@@ -61,7 +61,8 @@ class ResultCreateView(generic.UpdateView):
     model = Result
     fields = ['result', 'ref']
     def form_valid(self, form):
-        self.object.
+        self.object.wrote = True
+        self.object.save()
         return super().form_valid(form)
     
     template_name_suffix = '_create'
