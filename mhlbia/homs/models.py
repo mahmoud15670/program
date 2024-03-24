@@ -16,7 +16,7 @@ class Patient(models.Model):
     entry = models.DateTimeField(default=timezone.now, editable=False)
         
     def generate_rondom(self):
-        num = ''.join
+        num = ''.join(str(random.randint(0,9)) for _ in range(12))
     
     def total_prise(self):
         return sum([query.prise for query in self.test.all()])
