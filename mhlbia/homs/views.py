@@ -59,7 +59,7 @@ class TestDeleteView(generic.DeleteView):
 
 class ResultCreateView(generic.UpdateView):
     model = Result
-    fields = '__all__'
+    fields = ['result', 'ref']
     template_name_suffix = '_create'
     success_url = reverse_lazy('patient')
     

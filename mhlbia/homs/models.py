@@ -35,7 +35,7 @@ class Result(models.Model):
     patient = models.ForeignKey('Patient', on_delete=models.CASCADE)
     test = models.ForeignKey('Test', on_delete=models.PROTECT)
     result = models.CharField(max_length=10, blank=True)
-    reference = models.CharField(max_length=5000, blank=True)
+    ref = models.TextField(max_length=5000, blank=True)
     wrote = models.BooleanField(default=False)
     printed = models.BooleanField(default=False)
     drived = models.BooleanField(default=False)
