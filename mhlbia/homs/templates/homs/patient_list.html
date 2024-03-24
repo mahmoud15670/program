@@ -4,7 +4,7 @@
 <a href="{% url 'create_patient' %}">create patient</a>
 <ul>
 {% for patient in patients %}
-    <li><a href="{% url 'patient_dedil' patient.id %}">{{patient}}</a></li>
+    <li><a href="{% url 'patient_dedil' patient.patient_id %}">{{patient}}</a></li>
 {% endfor %}
 </ul>
 {% endblock %}
