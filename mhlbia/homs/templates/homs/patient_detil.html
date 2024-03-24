@@ -3,8 +3,8 @@
 {% block body %}
 
 <div>
-    <a href="{% url 'patient_edit' patient.id %}">edit {{patient}}</a>
-    <a href="{% url 'patient_delete' patient.id %}">delete {{patient}}</a>
+    <a href="{% url 'patient_edit' patient.patient_id %}">edit {{patient}}</a>
+    <a href="{% url 'patient_delete' patient.patient_id %}">delete {{patient}}</a>
 </div>
 <table>
     <thead>
