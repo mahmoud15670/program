@@ -28,11 +28,11 @@
             <td>
                 {% for test in patient.test.all %}
                 {{test.test.name}}
+                <a href="{% url 'result' %}"></a>
                 
                 {% endfor %}
                 
             </td>
-            
             <td>{{patient.total_prise}}</td>
             <td>{{patient.entry}}</td>
         </tr>
