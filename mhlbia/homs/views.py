@@ -63,5 +63,5 @@ class ResultCreateView(generic.CreateView):
     template_name_suffix = '_create'
     success_url = reverse_lazy('patient')
     def form_valid(self, form):
-        form.instance.patient = 
+        form.instance.patient = self.request.POST['patient']
         return super().form_valid(form)
