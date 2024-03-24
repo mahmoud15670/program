@@ -38,11 +38,7 @@
         <td>{{result.ref}}</td>
     </tr>
 </table>
-<form action="{% url 'result_print' result.id %}" method="post">
-    {% csrf_token %}
-    <input type="submit" value="print">
-</form>
-<a href="javascript:">Print</a>
+<a href="javascript:report()">Print</a>
 <footer><img src="{% static 'tail.jpg' %}" alt="tail img"></footer>
 <script>
     function report() {

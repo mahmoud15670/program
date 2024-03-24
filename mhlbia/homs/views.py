@@ -93,3 +93,4 @@ class ResultCreateView(generic.UpdateView):
 
 class ResultDetilView(generic.DetailView):
     model = Result
+    self.object.pr
