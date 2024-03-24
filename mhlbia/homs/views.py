@@ -23,7 +23,9 @@ class PatientCreateView(generic.CreateView):
     success_url = reverse_lazy('patient')
     def form_valid(self, form):
         object = form.save()
-        print(object.result_set.all())
+        for result in object.result_set.all():
+            if object.gender == 'male':
+                result.ref = result.test.ref_male
         return super().form_valid(form)
     
 
