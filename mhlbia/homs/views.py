@@ -62,8 +62,9 @@ class ResultCreateView(generic.UpdateView):
     fields = ['result', 'ref']
     def form_valid(self, form):
         result = self.object
-        if result.patient.gendr
-        form.initial = {'ref':ref}
+        if result.patient.gender == 'male':
+            form.initial = {'ref':result.test.}
+        
         self.object.wrote = True
         self.object.save()
         return super().form_valid(form)
