@@ -5,7 +5,7 @@ import random
 
 
 class Patient(models.Model):
-    patient_id = models.CharField(max_length=12, unique=True, default=random.ra())
+    patient_id = models.CharField(max_length=12, unique=True, default=random.randint())
     name = models.CharField(max_length=60, name='name')
     age = models.PositiveSmallIntegerField(name='age',)
     date = models.CharField(max_length=5, choices=[('year', 'year'), ('month', 'month'), ('day', 'day')])
@@ -15,7 +15,9 @@ class Patient(models.Model):
     test = models.ManyToManyField('Test', through='Result')
     entry = models.DateTimeField(default=timezone.now, editable=False)
         
-
+    def generate_rondom(self):
+        num = ''.join
+    
     def total_prise(self):
         return sum([query.prise for query in self.test.all()])
 
