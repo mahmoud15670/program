@@ -8,6 +8,7 @@
 </div>
 {% for test in patient.result_set.all %}
     {{test}}
+    <a href="{% url 'result' test.id %}">{{ test.test }}</a>
 {% endfor %}
 <table>
     <thead>
