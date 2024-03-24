@@ -27,7 +27,6 @@ class PatientEditView(generic.UpdateView):
     fields = '__all__'
     template_name_suffix = '_edit'
     success_url = reverse_lazy('patient')
-     
 class PatientDeleteView(generic.DeleteView):
     model = Patient
     template_name_suffix = '_delete'
@@ -53,7 +52,6 @@ class TestEditView(generic.UpdateView):
     fields = '__all__'
     template_name_suffix = '_edit'
     success_url = reverse_lazy('test')
-     
 class TestDeleteView(generic.DeleteView):
     model = Test
     template_name_suffix = '_delete'
@@ -64,4 +62,3 @@ class ResultCreateView(generic.CreateView):
     fields = '__all__'
     template_name_suffix = '_create'
     success_url = reverse_lazy('patient')
-    
