@@ -96,4 +96,4 @@ class ResultDetilView(generic.DetailView):
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
-        return HttpResponse('hi')
+        return HttpResponse(context.values())
