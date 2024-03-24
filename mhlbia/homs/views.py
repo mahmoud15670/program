@@ -38,6 +38,16 @@ class PatientEditView(generic.UpdateView):
     fields = '__all__'
     template_name_suffix = '_edit'
     success_url = reverse_lazy('patient')
+    def form_valid(self, form):
+        object = form.save()
+        for result in object.result_set.all():
+            if object.gender == 'male':
+                result.ref = result.test.ref_male
+                result.save()
+            else:
+                result.ref = result.test.ref_female
+                result.save()
+        return super().form_valid(form)
 class PatientDeleteView(generic.DeleteView):
     model = Patient
     template_name_suffix = '_delete'
