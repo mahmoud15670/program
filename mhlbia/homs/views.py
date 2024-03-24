@@ -43,7 +43,7 @@ class PatientDeleteView(generic.DeleteView):
     template_name_suffix = '_delete'
     success_url = reverse_lazy('patient')
 
-class TestView(PatientView):
+class TestView(generic.ListView):
     model = Test
     context_object_name = 'tests'
 
