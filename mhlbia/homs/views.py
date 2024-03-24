@@ -84,3 +84,7 @@ class ResultCreateView(generic.UpdateView):
     template_name_suffix = '_create'
     success_url = reverse_lazy('patient')
     
+
+class ResultDetilView(generic.DetailView):
+    model = Result
+    context_object_name = 'result'
