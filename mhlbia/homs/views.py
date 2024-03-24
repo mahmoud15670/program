@@ -1,5 +1,4 @@
 from django.views import generic
-from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from .models import *
@@ -93,7 +92,9 @@ class ResultCreateView(generic.UpdateView):
 
 class ResultDetilView(generic.DetailView):
     model = Result
-    def get (self):
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
         self.object.printed = True
         self.object.save()
-        return self
+        context = self.get_context_data(object=self.object)
+        return self.render_to_response(context)
