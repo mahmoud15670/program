@@ -22,7 +22,11 @@ class PatientCreateView(generic.CreateView):
     template_name_suffix = '_create'
     success_url = reverse_lazy('patient')
     def post(self, request, *args, **kwargs):
-        print(self.form)
+        def form_valid(self, form):
+            form
+            print(self)
+            return super().form_valid(form)
+        
         return super().post(request, *args, **kwargs)
 
 class PatientEditView(generic.UpdateView):
