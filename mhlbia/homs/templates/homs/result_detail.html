@@ -37,17 +37,20 @@
 <footer><img src="{% static 'tail.jpg' %}" alt="tail img"></footer>
 <a href="javascript:window.print()">Print this page</a>
 <style>
-    header {
+    header, footer {
         display: none;
     }
     table {
         width: -webkit-fill-available;
     }
     @media print {
-        header {
+        body {
+            height: 1754px;
+        }
+        header , footer {
             display: block;
         }
-        header img {
+        img {
             height: 137px;
             width: 100%;
         }
