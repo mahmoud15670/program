@@ -37,11 +37,11 @@
 </table>
 
 <ul>
-    {% for test in patient.result_set.all %}
-    <li>{{test.test}}: {{test.result}}=>{{test.wrote}} 
-        <a href="{% url 'result' test.id %}">result</a>
-        {% if test.wrote == True %}
-        <a href="{% url 'result_print' test.id %}">print</a>
+    {% for result in patient.result_set.all %}
+    <li>{{result.test}}: {{result.result}}=>{{result.wrote}} 
+        <a href="{% url 'result' result.id %}">result</a>
+        {% if result.wrote == True %}
+        <a href="{% url 'result_print' result.id %}">print</a>
         {% endif %}
     </li>
     {% endfor %}
