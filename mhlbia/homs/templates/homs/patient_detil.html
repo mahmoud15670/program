@@ -41,8 +41,9 @@
     <li>{{result.test}}: {{result.result}}=>{{result.wrote}} 
         <a href="{% url 'result' result.id %}">result</a>
         {% if result.wrote == True %}
-        <form
-        <a href="{% url 'result_print' result.id %}">print</a>
+        <form action="{% url 'result_print' result.id %}" method="post">
+            <input type="submit" value="print">
+        </form>
         {% endif %}
     </li>
     {% endfor %}
