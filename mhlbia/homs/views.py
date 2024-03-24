@@ -84,7 +84,7 @@ class ResultCreateView(generic.UpdateView):
     template_name_suffix = '_create'
     success_url = reverse_lazy('patient')
     def post(self, request, *args: str, **kwargs):
-        print(self)
+        print(self.get_object(kwargs['pk']))
         return super().post(request, *args, **kwargs)
     
 
