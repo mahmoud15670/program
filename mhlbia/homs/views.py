@@ -71,15 +71,6 @@ class TestDeleteView(generic.DeleteView):
 class ResultCreateView(generic.UpdateView):
     model = Result
     fields = ['result', 'ref']
-    def form_valid(self, form):
-        result = self.object
-        if result.patient.gender == 'male':
-            result.ref = result.test.ref_male
-        else:
-            result.ref = result.test.ref_female
-        result.wrote = True
-        result.save()
-        return super().form_valid(form)
     template_name_suffix = '_create'
     success_url = reverse_lazy('patient')
     
