@@ -2,7 +2,7 @@
 
 {% block body %}
 <header><img src="/mhlbia/author_headshots/Koala.jpg"></header>
-<table >
+<table id="head">
     <tr>
         <th>Name:</th>
         <td>{{result.patient.name}}</td>
@@ -39,10 +39,7 @@
     header {
         display: none;
     }
-    td {
-            width: 90%;
-            border: solid black 1px;
-        }
+    
     @media print {
         header {
             display: block;
@@ -53,7 +50,10 @@
         * {
             text-align: center;
         }
-        
+        #head td {
+            width: 90%;
+            border: solid black 1px;
+        }
     }
 </style>
 {% endblock %}
