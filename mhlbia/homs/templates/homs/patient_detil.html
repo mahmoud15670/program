@@ -42,6 +42,7 @@
         <a href="{% url 'result' result.id %}">result</a>
         {% if result.wrote == True %}
         <form action="{% url 'result_print' result.id %}" method="post">
+            {% csrf_token %}
             <input type="submit" value="print">
         </form>
         {% endif %}
