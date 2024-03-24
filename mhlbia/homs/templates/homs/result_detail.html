@@ -47,7 +47,10 @@
 <script>
     function report() {
         const print_date = document.querySelector('#print_date');
-        print_date.innerHTML = Date
+        var now = new Date()
+        var day = now.toISOString().split('T')[0]
+        var time = now.toISOString().split('T')[1].split('.')
+        print_date.innerHTML = day+' '+time
         window.print()
     }
 </script>
