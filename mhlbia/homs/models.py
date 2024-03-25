@@ -14,7 +14,6 @@ class Patient(models.Model):
     dr = models.CharField(max_length=30, default='-')
     test = models.ManyToManyField('Test', through='Result')
     entry = models.DateTimeField(default=timezone.now, editable=False)
-        
     
     def total_prise(self):
         return sum([query.prise for query in self.test.all()])
