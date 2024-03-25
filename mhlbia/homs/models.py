@@ -41,3 +41,7 @@ class Result(models.Model):
     printed = models.BooleanField(default=False)
     drived = models.BooleanField(default=False)
 
+class Print(models.Model):
+    result = models.ManyToManyField('Result')
+    print_time = models.DateTimeField(default=timezone.now, editable=False)
+    print_count = models.IntegerField(default=0)
