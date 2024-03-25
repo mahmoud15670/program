@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-CSRF_TRUSTED_ORIGINS = ['https://ubiquitous-enigma-7q7r6wv944whpw55-8000.preview.app.github.dev']
+CSRF_TRUSTED_ORIGINS = ['https://symmetrical-space-rotary-phone-56v4j5gqpqjf4vxp-8000.app.github.dev']
 
 # Application definition
 
