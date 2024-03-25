@@ -97,3 +97,7 @@ class ResultDetilView(generic.DetailView):
         context = self.get_context_data(object=self.object)
         return self.render_to_response(context)
 
+class PrintCreate(generic.CreateView):
+    model = Print
+    fields = '__all__'
+    success_url = reverse_lazy('result')

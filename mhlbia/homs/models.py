@@ -40,6 +40,10 @@ class Result(models.Model):
     wrote = models.BooleanField(default=False)
     printed = models.BooleanField(default=False)
     drived = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return f"{self.patient.name}'s {self.test.name}"
+    
 
 class Print(models.Model):
     result = models.ManyToManyField('Result')
