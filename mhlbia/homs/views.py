@@ -101,3 +101,6 @@ class PrintCreate(generic.CreateView):
     model = Print
     fields = '__all__'
     success_url = reverse_lazy('result')
+
+class PrintDedil(generic.DetailView):
+    model = Print
