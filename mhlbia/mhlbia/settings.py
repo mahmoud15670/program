@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-a&_5$o$vo-5u%!+kars)ogc3xt%+2b@40xszud30%oh@#5_gp8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['20.90.66.7']
 
 CSRF_TRUSTED_ORIGINS = ['https://symmetrical-space-rotary-phone-56v4j5gqpqjf4vxp-8000.app.github.dev','https://*.app.github.dev']
 
