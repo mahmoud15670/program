@@ -31,7 +31,7 @@ class PatientCreateView(generic.CreateView):
                 result.ref = result.test.ref_female
                 result.save()
         return super().form_valid(form)
-    
+
 
 class PatientEditView(generic.UpdateView):
     model = Patient
@@ -87,8 +87,6 @@ class ResultCreateView(generic.UpdateView):
         self.object.wrote = True
         self.object.save()
         return super().form_valid(form)
-    
-    
 
 class ResultDetilView(generic.DetailView):
     model = Result
