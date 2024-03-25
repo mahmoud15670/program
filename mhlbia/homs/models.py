@@ -48,4 +48,4 @@ class Result(models.Model):
 class Print(models.Model):
     result = models.ManyToManyField('Result')
     print_time = models.DateTimeField(default=timezone.now, editable=False)
-    print_count = models.IntegerField(default=0)
+    print_count = models.IntegerField(default=0, editable=False)
