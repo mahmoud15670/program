@@ -1,5 +1,5 @@
 from django.views import generic
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from .models import *
 from .forms import *
@@ -21,6 +21,19 @@ def creat_patient(request):
     if request.method != 'POST':
         form = Patient_form()
         return render(request, 'homs/patient_create.html', {'form':form})
+    form = Patient_form(request.POST)
+    if form.is_valid():
+        patient = Patient(form.cleaned_data)
+        patient.save()
+        for result in patient.result_set.all():
+            if patient.gender == 'male':
+                result.ref = result.test.ref_male
+                result.save()
+            else:
+                result.ref = result.test.ref_female
+                result.save()
+        return HttpResponseRedirect(reve)
+
 
 class PatientEditView(generic.UpdateView):
     model = Patient
