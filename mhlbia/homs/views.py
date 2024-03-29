@@ -23,8 +23,7 @@ def creat_patient(request):
         return render(request, 'homs/patient_create.html', {'form':form})
     form = Patient_form(request.POST)
     if form.is_valid():
-        patient = Patient(form.cleaned_data)
-        patient.save()
+        patient = form.save()
         for result in patient.result_set.all():
             if patient.gender == 'male':
                 result.ref = result.test.ref_male
