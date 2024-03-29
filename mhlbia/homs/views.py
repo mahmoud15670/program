@@ -32,7 +32,9 @@ def creat_patient(request):
             else:
                 result.ref = result.test.ref_female
                 result.save()
-        return HttpResponseRedirect(reve)
+        return HttpResponseRedirect(reverse('patient'))
+    else:
+        return render(request, 'homs/patient_create.html', {'form':form})
 
 
 class PatientEditView(generic.UpdateView):
