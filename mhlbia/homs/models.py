@@ -14,7 +14,7 @@ class Patient(models.Model):
     dr = models.CharField(max_length=30, default='-')
     test = models.ManyToManyField('Test', through='Result')
     entry = models.DateTimeField(default=timezone.now, editable=False)
-    
+
     def total_prise(self):
         return sum([query.prise for query in self.test.all()])
 
@@ -40,12 +40,7 @@ class Result(models.Model):
     wrote = models.BooleanField(default=False)
     printed = models.BooleanField(default=False)
     drived = models.BooleanField(default=False)
-    
+
     def __str__(self):
         return f"{self.patient.name}'s {self.test.name}"
-    
 
-class Print(models.Model):
-    result = models.ManyToManyField('Result')
-    print_time = models.DateTimeField(default=timezone.now, editable=False)
-    print_count = models.IntegerField(default=0, editable=False)
