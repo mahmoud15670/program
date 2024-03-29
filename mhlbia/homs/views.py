@@ -22,7 +22,7 @@ class PatientCreateView(generic.CreateView):
     template_name_suffix = '_create'
     success_url = reverse_lazy('patient')
     def form_valid(self, form):
-        form.
+        form.da
         # for result in object.result_set.all():
         #     if object.gender == 'male':
         #         result.ref = result.test.ref_male
