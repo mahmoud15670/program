@@ -6,8 +6,8 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('patient', views.PatientView.as_view(), name='patient'),
-    # path('patient/create', views.PatientCreateView.as_view(), name='create_patient'),
-    # path('patient/<int:pk>', views.PatientDetilView.as_view(), name='patient_dedil'),
+    path('patient/create', views.creat_patient, name='create_patient'),
+    path('patient/<int:pk>', views.PatientDetilView.as_view(), name='patient_dedil'),
     path('patient/edit/<int:pk>', views.PatientEditView.as_view(), name='patient_edit'),
     path('patient/delete/<int:pk>', views.PatientDeleteView.as_view(), name='patient_delete'),
     path('test', views.TestView.as_view(), name='test'),

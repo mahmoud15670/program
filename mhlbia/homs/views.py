@@ -2,6 +2,7 @@ from django.views import generic
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from .models import *
+from .forms import *
 
 def index(requset):
     return render(requset, 'homs/layout.html')
@@ -18,7 +19,8 @@ class PatientDetilView(generic.DetailView):
 
 def creat_patient(request):
     if request.method != 'POST':
-        return render(request, 'homs/patient_create.html')
+        form = Patient_form()
+        return render(request, 'homs/patient_create.html', {'form':form})
 
 class PatientEditView(generic.UpdateView):
     model = Patient
