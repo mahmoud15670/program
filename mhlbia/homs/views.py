@@ -18,7 +18,7 @@ class PatientDetilView(generic.DetailView):
 
 def creat_patient(request):
     if request.method != 'POST':
-        return render(request, 'homs/')
+        return render(request, 'homs/patient_create.html')
 
 class PatientEditView(generic.UpdateView):
     model = Patient
