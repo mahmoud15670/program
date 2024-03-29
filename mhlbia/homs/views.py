@@ -11,6 +11,14 @@ class PatientView(generic.ListView):
     template_name_suffix = '_list'
     context_object_name = 'patients'
 
+class PatientDetilView(generic.DetailView):
+    model = Patient
+    template_name_suffix = '_detil'
+    context_object_name = 'patient'
+
+def creat_patient(request):
+    if request.method != 'POST':
+        return render(request, 'homs/')
 
 class PatientEditView(generic.UpdateView):
     model = Patient
