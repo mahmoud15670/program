@@ -83,24 +83,4 @@ class ResultCreateView(generic.UpdateView):
     fields = ['result', 'ref']
     template_name_suffix = '_create'
     success_url = reverse_lazy('patient')
-    def form_valid(self, form):
-        self.object.wrote = True
-        self.object.save()
-        return super().form_valid(form)
 
-class ResultDetilView(generic.DetailView):
-    model = Result
-    def get(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        self.object.printed = True
-        self.object.save()
-        context = self.get_context_data(object=self.object)
-        return self.render_to_response(context)
-    
-class PrintCreate(generic.CreateView):
-    model = Print
-    fields = '__all__'
-    success_url = reverse_lazy('result')
-
-class PrintDedil(generic.DetailView):
-    model = Print
