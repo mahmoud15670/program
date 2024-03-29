@@ -11,27 +11,6 @@ class PatientView(generic.ListView):
     template_name_suffix = '_list'
     context_object_name = 'patients'
 
-class PatientDetilView(generic.DetailView):
-    model = Patient
-    template_name_suffix = '_detil'
-    context_object_name = 'patient'
-
-class PatientCreateView(generic.CreateView):
-    model = Patient
-    fields = '__all__'
-    template_name_suffix = '_create'
-    success_url = reverse_lazy('patient')
-    def form_valid(self, form):
-        object = form.save(commit=False)
-        for result in object.result_set.all():
-            if object.gender == 'male':
-                result.ref = result.test.ref_male
-                result.save()
-            else:
-                result.ref = result.test.ref_female
-                result.save()
-        return super().form_valid(form)
-
 
 class PatientEditView(generic.UpdateView):
     model = Patient
