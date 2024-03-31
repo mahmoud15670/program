@@ -3,13 +3,15 @@ from django.utils import timezone
 import random
 
 
-
 class Patient(models.Model):
-    patient_id = models.CharField(max_length=12, unique=True, editable=False, default=''.join(str(random.randint(0,9)) for _ in range(12)))
+    patient_id = models.CharField(max_length=12, unique=True, editable=False, default=''.join(
+        str(random.randint(0, 9)) for _ in range(12)))
     name = models.CharField(max_length=60, name='name')
     age = models.PositiveSmallIntegerField(name='age',)
-    date = models.CharField(max_length=5, choices=[('year', 'year'), ('month', 'month'), ('day', 'day')])
-    gender = models.CharField(max_length=6, choices=[('male', 'male'), ('female', 'female')])
+    date = models.CharField(max_length=5, choices=[(
+        'year', 'year'), ('month', 'month'), ('day', 'day')])
+    gender = models.CharField(max_length=6, choices=[
+                                ('male', 'male'), ('female', 'female')])
     phone = models.CharField(max_length=12, blank=True)
     dr = models.CharField(max_length=30, default='-')
     test = models.ManyToManyField('Test', through='Result')
@@ -32,6 +34,7 @@ class Test(models.Model):
     def __str__(self):
         return self.name
 
+
 class Result(models.Model):
     patient = models.ForeignKey('Patient', on_delete=models.CASCADE)
     test = models.ForeignKey('Test', on_delete=models.PROTECT)
@@ -43,4 +46,3 @@ class Result(models.Model):
 
     def __str__(self):
         return f"{self.patient.name}'s {self.test.name}"
-
