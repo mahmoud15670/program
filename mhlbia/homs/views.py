@@ -36,7 +36,7 @@ def creat_patient(request):
             else:
                 result.ref = result.test.ref_female
                 result.save()
-        return HttpResponseRedirect(reverse('patient'))
+        return HttpResponseRedirect(reverse('pacromtient'))
     else:
         return render(request, 'homs/patient_create.html', {'form': form})
 
