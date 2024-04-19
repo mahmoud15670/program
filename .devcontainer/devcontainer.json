@@ -32,5 +32,8 @@
 		"python": "latest",
 		"java": "latest",
 		"dotnet": "latest"
-	}
+	},
+	"runArgs": ["--init", "--shm-size=1g"],
+	"forwardPorts": [6080, 5901],
+	"overrideCommand": false
 }
