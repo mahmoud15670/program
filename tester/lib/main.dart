@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.displayLarge,
             ),
             Card(
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).colorScheme.secondary,
               child: Text(
                 '$_counter',
                 style: Theme.of(context).textTheme.headlineLarge,
