@@ -110,9 +110,12 @@ class _MyHomePageState extends State<MyHomePage> {
               mylist.first,
               style: Theme.of(context).textTheme.displayLarge,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineLarge,
+            Card(
+              child: Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headlineLarge,
+              ),
+              sty
             ),
           ],
         ),
