@@ -37,7 +37,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          Card.outlined()
+          Card.outlined(child: Text('hi'),)
         ],
       ),
     );
