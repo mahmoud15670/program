@@ -56,7 +56,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  List 
+  List _list = ['سبحان الله','الحمد لله','لا اله الا الله','الله اكبر'];
 
   void _incrementCounter() {
     setState(() {
