@@ -61,12 +61,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     
-    if (_counter == 10) {
+    if (_counter == 5) {
       setState(() {
+        _listIndex++;
         if (_listIndex>3) {
           _listIndex=0;
         }
-        _listIndex++;
         _counter = 0;
       });
     }
