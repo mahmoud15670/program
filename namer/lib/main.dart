@@ -45,9 +45,6 @@ class MyHomePage extends StatelessWidget {
             },
             child: Text('Next'),
           ),
-          ElevatedButton(onPressed: () {
-            print('ok');
-          }, child: Text('hi'))
         ],
       ),
     );
