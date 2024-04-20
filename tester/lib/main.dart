@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page.'),
+      home: const MyHomePage(title: 'التسبيح بعد الصلاة'),
     );
   }
 }
@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     
-    if (_counter == 5) {
+    if (_counter == 33) {
       setState(() {
         _listIndex++;
         if (_listIndex>3) {
