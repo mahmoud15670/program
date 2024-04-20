@@ -56,9 +56,16 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  int _listIndex = 0;
   var mylist = ['سبحان الله','الحمد لله','لا اله الا الله','الله اكبر'];
 
   void _incrementCounter() {
+    if (_counter == 100) {
+      setState(() {
+        _listIndex++;
+        _counter = 0;
+      });
+    }
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -115,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 '$_counter',
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
-              sty
+              
             ),
           ],
         ),
