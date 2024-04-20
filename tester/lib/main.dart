@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (_listIndex>3) {
       _listIndex=0;
     }
-    if (_counter == 10) {
+    if (_counter == 10 && _listIndex>3) {
       setState(() {
         _listIndex++;
         _counter = 0;
