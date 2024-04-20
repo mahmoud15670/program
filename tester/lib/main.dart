@@ -60,11 +60,12 @@ class _MyHomePageState extends State<MyHomePage> {
   var mylist = ['سبحان الله','الحمد لله','لا اله الا الله','الله اكبر'];
 
   void _incrementCounter() {
-    if (_listIndex>3) {
-      _listIndex=0;
-    }
+    
     if (_counter == 10) {
       setState(() {
+        if (_listIndex>3) {
+          _listIndex=0;
+        }
         _listIndex++;
         _counter = 0;
       });
