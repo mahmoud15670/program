@@ -60,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
   var mylist = ['سبحان الله','الحمد لله','لا اله الا الله','الله اكبر'];
 
   void _incrementCounter() {
-    if (_counter == 100) {
+    if (_counter == 10) {
       setState(() {
         _listIndex++;
         _counter = 0;
@@ -114,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              mylist.first,
+              mylist[_listIndex],
               style: Theme.of(context).textTheme.displayLarge,
             ),
             Card(
