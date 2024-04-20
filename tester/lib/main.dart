@@ -56,7 +56,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  List _list = ['سبحان الله','الحمد لله','لا اله الا الله','الله اكبر'];
+  var mylist = ['سبحان الله','الحمد لله','لا اله الا الله','الله اكبر'];
 
   void _incrementCounter() {
     setState(() {
@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              mylist.first,
             ),
             Text(
               '$_counter',
