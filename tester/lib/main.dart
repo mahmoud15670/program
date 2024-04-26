@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.displayLarge,
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(10),
               child: Card(
                 color: Theme.of(context).colorScheme.secondary,
                 child: Text(
