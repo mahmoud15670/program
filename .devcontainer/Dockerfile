@@ -1,4 +1,4 @@
-# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/ubuntu/.devcontainer/base.Dockerfile
+See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/ubuntu/.devcontainer/base.Dockerfile
 
 # [Choice] Ubuntu version (use ubuntu-22.04 or ubuntu-18.04 on local arm64/Apple Silicon): ubuntu-22.04, ubuntu-20.04, ubuntu-18.04
 ARG VARIANT="jammy"
@@ -22,4 +22,5 @@ CMD ["sleep", "infinity"]
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && curl -sSL https://dl.google.com/linux/direct/google-chrome-stable_current_$(dpkg --print-architecture).deb -o /tmp/chrome.deb \
     && apt-get -y install /tmp/chrome.deb
-RUN sudo apt-get install snap && sudo snap install flutter --classic
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    sudo apt-get install snap && sudo snap install flutter --classic
