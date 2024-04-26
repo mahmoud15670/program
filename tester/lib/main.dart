@@ -20,16 +20,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class FristPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return {
-      Placeholder()
-    }
-    throw UnimplementedError();
-  }
-}
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
   final String title;
