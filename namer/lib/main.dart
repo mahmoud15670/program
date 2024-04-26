@@ -74,7 +74,6 @@ class BigCard extends StatelessWidget {
     );
     return Card(
       color: theme.colorScheme.primary,
-      shadowColor: Colors.black,
 
       child: Padding(
         padding: const EdgeInsets.all(20),
