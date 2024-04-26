@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         _listIndex++;
         if (_listIndex>3) {
-          _listIndex=0;
+          Placeholder();
         }
         _counter = 0;
       });
