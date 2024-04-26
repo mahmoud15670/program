@@ -1,9 +1,0 @@
-{% extends 'homs/layout.html' %}
-
-{% block body %}
-<form method="post">
-    {% csrf_token %}
-    <p>do you want delete {{patient}} premntly</p>
-    <input type="submit" value="delete">
-</form>
-{% endblock %}
