@@ -65,16 +65,16 @@ class _MyHomePageState extends State<MyHomePage> {
               mylist[_listIndex],
               style: Theme.of(context).textTheme.displayLarge,
             ),
-            Padding(
-              padding: const EdgeInsets.all(100.0),
-              child: Card(
+             Card(
                 color: Theme.of(context).colorScheme.inversePrimary,
-                child: Text(
-                  '$_counter',
-                  style: Theme.of(context).textTheme.headlineLarge,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Text(
+                    '$_counter',
+                    style: Theme.of(context).textTheme.headlineLarge,
+                  ),
                 ),
               ),
-            ),
           ],
         ),
       ),
