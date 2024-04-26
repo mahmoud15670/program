@@ -56,7 +56,7 @@ class MyHomePage extends StatelessWidget {
                   },
                   child: Text('Next'),
                 ),
-                ElevatedButton.icon(onPressed: print('loved'), icon: Icon(Icons.heat_pump_rounded), label: 'loved')
+                ElevatedButton.icon(onPressed: print('loved'), icon: Icons.heat_pump_rounded, label: 'like',)
               ],
             ),
 
