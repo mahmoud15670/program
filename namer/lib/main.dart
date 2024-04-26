@@ -70,7 +70,7 @@ class BigCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Card(
-      color: theme.primaryColor,
+      color: theme.colorScheme.primary,
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: Text(pair.asLowerCase),
