@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(
               padding: const EdgeInsets.all(10),
               child: Card(
-                color: Theme.of(context).colorScheme.secondary,
+                color: Theme.of(context).colorScheme.inversePrimary,
                 child: Text(
                   '$_counter',
                   style: Theme.of(context).textTheme.headlineLarge,
