@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   var mylist = ['سبحان الله','الحمد لله','لا اله الا الله','الله اكبر'];
 
   void _incrementCounter() {
-    
+
     if (_counter == 33) {
       setState(() {
         _listIndex++;
@@ -58,18 +58,21 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
-          
+
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
               mylist[_listIndex],
               style: Theme.of(context).textTheme.displayLarge,
             ),
-            Card(
-              color: Theme.of(context).colorScheme.secondary,
-              child: Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.headlineLarge,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                color: Theme.of(context).colorScheme.secondary,
+                child: Text(
+                  '$_counter',
+                  style: Theme.of(context).textTheme.headlineLarge,
+                ),
               ),
             ),
           ],
