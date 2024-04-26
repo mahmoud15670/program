@@ -35,12 +35,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
 
-    if (_counter == 33) {
+    if (_counter == 3) {
       setState(() {
         _listIndex++;
         if (_listIndex>3) {
           _listIndex=0;
-          Placeholder();
+          const Placeholder();
         }
         _counter = 0;
       });
