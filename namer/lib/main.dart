@@ -67,28 +67,17 @@ class MyHomePage extends StatelessWidget {
                   },
                   child: Text('Next'),
                 ),
-                ToggleFavButton(pair: pair),
+                ElevatedButton.icon(
+                  onPressed: appState.toggleFavorite(pair),
+                  icon: Icons.heat_pump_rounded,
+                  label: 'like',
+                ),
               ],
             ),
 
           ],
         ),
       ),
-    );
-  }
-}
-
-class ToggleFavButton extends StatelessWidget {
-  const ToggleFavButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      onPressed: ,
-      icon: Icons.heat_pump_rounded,
-      label: 'like',
     );
   }
 }
