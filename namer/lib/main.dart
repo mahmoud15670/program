@@ -67,7 +67,7 @@ class MyHomePage extends StatelessWidget {
                   },
                   child: Text('Next'),
                 ),
-                ToggleFavButton(pair),
+                ToggleFavButton(pair: pair),
               ],
             ),
 
