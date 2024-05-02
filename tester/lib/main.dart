@@ -66,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
               mylist[_listIndex],
               style: Theme.of(context).textTheme.displayLarge,
             ),
+<<<<<<< HEAD
              Card(
                 color: Theme.of(context).colorScheme.inversePrimary,
                 child: Padding(
@@ -75,6 +76,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: Theme.of(context).textTheme.headlineLarge,
                   ),
                 ),
+=======
+            Card(
+              color: Theme.of(context).colorScheme.,
+              child: Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.headlineLarge,
+>>>>>>> 90e179b (May 2, 2024, 9:35 AM)
               ),
           ],
         ),
