@@ -78,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
 =======
             Card(
-              color: Theme.of(context).colorScheme.,
+              color: Theme.of(context).colorScheme.primary,
               child: Text(
                 '$_counter',
                 style: Theme.of(context).textTheme.headlineLarge,
