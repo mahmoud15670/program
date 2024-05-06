@@ -8,6 +8,10 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 COPY library-scripts/desktop-lite-debian.sh /tmp/library-scripts/
+RUN cd /tmp \
+    && curl -O https://kasm-static-content.s3.amazonaws.com/kasm_release_1.15.0.06fdc8.tar.gz \
+    && tar -xf kasm_release_1.15.0.06fdc8.tar.gz \
+    && sudo bash kasm_release/install.sh
 RUN apt-get update && bash /tmp/library-scripts/desktop-lite-debian.sh
 ENV DBUS_SESSION_BUS_ADDRESS="autolaunch:" \
     VNC_RESOLUTION="1440x768x16" \
@@ -23,8 +27,3 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && curl -sSL https://dl.google.com/linux/direct/google-chrome-stable_current_$(dpkg --print-architecture).deb -o /tmp/chrome.deb \
     && apt-get -y install /tmp/chrome.deb
 
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && cd /tmp \
-    && curl -O https://kasm-static-content.s3.amazonaws.com/kasm_release_1.15.0.06fdc8.tar.gz \
-    && tar -xf kasm_release_1.15.0.06fdc8.tar.gz \
-    && sudo bash kasm_release/install.sh
