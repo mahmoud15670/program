@@ -22,3 +22,9 @@ CMD ["sleep", "infinity"]
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && curl -sSL https://dl.google.com/linux/direct/google-chrome-stable_current_$(dpkg --print-architecture).deb -o /tmp/chrome.deb \
     && apt-get -y install /tmp/chrome.deb
+
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && cd /tmp \
+    && curl -O https://kasm-static-content.s3.amazonaws.com/kasm_release_1.15.0.06fdc8.tar.gz \
+    && tar -xf kasm_release_1.15.0.06fdc8.tar.gz \
+    && sudo bash kasm_release/install.sh
