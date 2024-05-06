@@ -8,12 +8,15 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 COPY library-scripts/desktop-lite-debian.sh /tmp/library-scripts/
-RUN sudo dd if=/dev/zero of=/mnt/Kasm.swap bs=1M count=1024 \
-    && sudo chmod 600 /mnt/Kasm.swap \
-    && sudo mkswap /mnt/Kasm.swap \
-    sudo swapon /mnt/Kasm.swap
     
 RUN apt-get update && bash /tmp/library-scripts/desktop-lite-debian.sh
+RUN fallocate -l 1G /swapfile && \
+    chmod 600 /swapfile && \
+    mkswap /swapfile && \
+    swapon /swapfile
+
+# Optional: Add entry to /etc/fstab to ensure swap is enabled on boot
+RUN echo '/swapfile none swap sw 0 0' >> /etc/fstab
 ENV DBUS_SESSION_BUS_ADDRESS="autolaunch:" \
     VNC_RESOLUTION="1440x768x16" \
     VNC_DPI="96" \
