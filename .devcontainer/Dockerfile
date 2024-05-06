@@ -10,10 +10,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 COPY library-scripts/desktop-lite-debian.sh /tmp/library-scripts/
     
 RUN apt-get update && bash /tmp/library-scripts/desktop-lite-debian.sh
-RUN fallocate -l 1G /swapfile && \
-    chmod 600 /swapfile && \
-    mkswap /swapfile && \
-    swapon /swapfile
+
 
 # Optional: Add entry to /etc/fstab to ensure swap is enabled on boot
 RUN echo '/swapfile none swap sw 0 0' >> /etc/fstab
